@@ -341,13 +341,13 @@ GPIOControl.prototype.statusChanged = function(state) {
 GPIOControl.prototype.handleEvent = function(e) {
 	var self = this;
 
-	self.GPIOs.forEach(function(gpio) {
+	self.GPIOs.forEach(function(gpio1) {
 			// Clear any previous timers
 
-			self.log(`Clearing delay timeout id: ${gpio.delayTimeoutId} for GPIO ${gpio.pin}.`);
-			clearTimeout(gpio.delayTimeoutId);
-			self.log(`Clearing duration timeout id: ${gpio.durationTimeoutId} for GPIO ${gpio.pin}.`);
-			clearTimeout(gpio.durationTimeoutId);
+			self.log(`Clearing delay timeout id: ${gpio1.delayTimeoutId} for GPIO ${gpio1.pin}.`);
+			clearTimeout(gpio1.delayTimeoutId);
+			self.log(`Clearing duration timeout id: ${gpio1.durationTimeoutId} for GPIO ${gpio1.pin}.`);
+			clearTimeout(gpio1.durationTimeoutId);
 	});
 
 	self.GPIOs.forEach(function(gpio) {
