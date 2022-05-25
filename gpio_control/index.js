@@ -353,7 +353,7 @@ GPIOControl.prototype.handleEvent = function(e) {
 	self.GPIOs.forEach(function(gpio) {
 		if (gpio.e == e){
 			self.log(`*** ${e} ***`);
-			self.log(`Delaying: ${gpio.delay}ms`);
+			self.log(`Delaying:: ${gpio.delay} ms`);
 
 			// Create a delay to writing to GPIO
 			gpio.delayTimeoutId = setTimeout(function() {
@@ -365,7 +365,7 @@ GPIOControl.prototype.handleEvent = function(e) {
 				// If a duration has been specified then write to GPIO after specified duration
 				if (gpio.duration > 0){
 
-					self.log(`Delaying: ${gpio.duration}ms`);
+					self.log(`Delaying:: ${gpio.duration} ms`);
 
 					// Create timeout to pull GPIO
 					gpio.durationTimeoutId = setTimeout(function() {
