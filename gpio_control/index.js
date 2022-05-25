@@ -343,7 +343,10 @@ GPIOControl.prototype.handleEvent = function(e) {
 
 	self.GPIOs.forEach(function(gpio) {
 			// Clear any previous timers
+
+			self.log(`Clearing delay timeout id: ${gpio.delayTimeoutId} for GPIO ${gpio.pin}.`);
 			clearTimeout(gpio.delayTimeoutId);
+			self.log(`Clearing duration timeout id: ${gpio.durationTimeoutId} for GPIO ${gpio.pin}.`);
 			clearTimeout(gpio.durationTimeoutId);
 	});
 
